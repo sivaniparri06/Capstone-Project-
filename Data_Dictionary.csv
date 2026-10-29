@@ -1,0 +1,21 @@
+﻿File,Field(s),Meaning,Role
+Customers.csv,CustomerID,Unique customer key,Dimension
+Customers.csv,Region / CustomerSegment,Customer geography and segment,Dimension
+Products.xlsx,ProductID,Unique product key,Dimension
+Products.xlsx,Category / Subcategory / Brand,Product hierarchy and brand,Dimension
+Products.xlsx,UnitPrice / UnitCost,List price and standard unit cost,Dimension attributes
+Employees.xlsx,EmployeeID,Unique employee key,Dimension
+Employees.xlsx,Region / Role / ManagerID,Sales team attributes,Dimension
+Orders.csv,OrderID,Unique order header key,Fact/header
+Orders.csv,OrderDate / ShipDate,Order and shipment dates,Fact/header
+Orders.csv,CustomerID / SalespersonID,Foreign keys,Fact/header
+Orders.csv,SalesChannel / OrderStatus / ShippingFee,Order operations attributes,Fact/header
+Order_Items.csv,OrderItemID,Unique order-line key,Fact/line
+Order_Items.csv,OrderID / ProductID,Foreign keys,Fact/line
+Order_Items.csv,Quantity / UnitPrice / DiscountPct,"Quantity, price and discount",Fact/line
+Order_Items.csv,GrossSales / DiscountAmount / NetSales,Line sales amounts,Fact/line
+Order_Items.csv,UnitCostAtSale / TotalCost,Line cost amounts,Fact/line
+SalesTargets.csv,EmployeeID / MonthStart,Employee-month target grain,Fact/target
+SalesTargets.csv,RevenueTarget / OrderTarget,Monthly sales targets,Fact/target
+Returns.csv,OrderItemID,Links return to original line,Fact/returns
+Returns.csv,ReturnedQuantity / ReturnReason / ReturnDate,"Returned units, reason and date",Fact/returns
